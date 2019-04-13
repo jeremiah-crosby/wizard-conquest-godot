@@ -3,14 +3,14 @@
 [ext_resource path="res://fonts/BlackCastleMF.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://fonts/KeepCalm-Medium.ttf" type="DynamicFontData" id=2]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 59
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 28
 font_data = ExtResource( 2 )
 
@@ -21,7 +21,7 @@ anchor_bottom = 1.0
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 margin_right = 1280.0
@@ -41,7 +41,7 @@ custom_constants/separation = 36
 [node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 margin_right = 1080.0
 margin_bottom = 68.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.764706, 0.164706, 0.164706, 1 )
 text = "WIZARD CONQUEST"
 align = 1
@@ -50,7 +50,7 @@ align = 1
 margin_top = 104.0
 margin_right = 1080.0
 margin_bottom = 139.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Start"
 align = 1
 
