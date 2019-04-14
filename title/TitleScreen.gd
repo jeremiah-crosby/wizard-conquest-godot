@@ -9,3 +9,4 @@ func _ready():
 
 func _on_StartButton_pressed():
 	emit_signal("start_game")
+	queue_free()
