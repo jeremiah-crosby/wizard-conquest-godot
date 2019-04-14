@@ -7,7 +7,8 @@ extends "res://state_machine/state_machine.gd"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	states_map = {
-		"title": $TitleState
+		"title": $TitleState,
+		"gameplay": $GameplayState
 	}
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
