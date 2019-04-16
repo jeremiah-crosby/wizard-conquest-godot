@@ -8,3 +8,7 @@ func _input(event):
 		emit_signal("unpause")
 	else:
 		pass
+
+
+func _on_ContinueButton_pressed():
+	emit_signal("unpause")
