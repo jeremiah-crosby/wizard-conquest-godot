@@ -55,4 +55,14 @@ size_flags_vertical = 4
 text = "Start"
 flat = true
 
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+margin_left = 515.0
+margin_top = 187.0
+margin_right = 565.0
+margin_bottom = 214.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quit"
+
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]

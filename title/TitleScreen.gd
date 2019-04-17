@@ -10,3 +10,7 @@ func _ready():
 func _on_StartButton_pressed():
 	print("Start game pressed")
 	emit_signal("start_game")
+
+
+func _on_Button_pressed():
+	get_tree().quit()
