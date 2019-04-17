@@ -1,24 +1,21 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://title/TitleScreen.gd" type="Script" id=1]
-[ext_resource path="res://fonts/BlackCastleMF.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://fonts/KeepCalm-Medium.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://ui/ui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://title/TitleScreen.gd" type="Script" id=2]
+[ext_resource path="res://fonts/BlackCastleMF.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 59
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 38
 font_data = ExtResource( 3 )
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchor_right = 1.0
@@ -49,14 +46,12 @@ text = "WIZARD CONQUEST"
 align = 1
 
 [node name="StartButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
-margin_left = 487.0
+margin_left = 493.0
 margin_top = 104.0
-margin_right = 593.0
-margin_bottom = 157.0
+margin_right = 587.0
+margin_bottom = 151.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color_hover = Color( 0.882353, 0.901961, 0.239216, 1 )
 text = "Start"
 flat = true
 
