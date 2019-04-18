@@ -3,9 +3,8 @@
 [ext_resource path="res://characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://wizard_tmp.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 33.5475
-height = 1.0351
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 34.0684, 5.4155 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -14,5 +13,6 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.115112, 26.7128 )
 shape = SubResource( 1 )
 

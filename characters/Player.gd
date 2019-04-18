@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const BASE_SPEED = 200
+const BASE_SPEED = 300
 
 func _physics_process(delta):
 	var velocity = Vector2()
