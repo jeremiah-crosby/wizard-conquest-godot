@@ -29,4 +29,5 @@ func collision_shape_get():
 	return get_node("Area2D/CollisionShape2D").shape
 
 func _on_Area2D_area_entered(area):
-	get_parent().queue_free()
+	if area.is_in_group("projectile"):
+		get_parent().queue_free()
