@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://characters/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/enemy2/enemy2.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 3, 0, 108, 187.551 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 50.0
+height = 85.0
+
+[node name="Enemy2" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource( 1 )]
+texture = SubResource( 1 )
+collision_shape = SubResource( 2 )
+
