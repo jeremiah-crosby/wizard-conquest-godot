@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://wizard_tmp.png" type="Texture" id=2]
+[ext_resource path="res://characters/Health.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 34.0684, 5.4155 )
@@ -25,5 +26,8 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
 position = Vector2( -5.82361, -0.970581 )
 shape = SubResource( 2 )
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource( 3 )
 
 [connection signal="area_entered" from="HitboxArea" to="." method="_on_HitboxArea_area_entered"]
