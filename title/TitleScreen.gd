@@ -4,7 +4,7 @@ signal start_game
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	get_node("PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer/StartButton").grab_focus()
 
 
 func _on_StartButton_pressed():
