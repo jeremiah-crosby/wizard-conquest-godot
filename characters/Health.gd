@@ -2,6 +2,8 @@ extends Node
 
 class_name Health
 
+signal died
+
 export var max_amount = 100
 export var current_amount = 100
 
@@ -9,6 +11,7 @@ export var current_amount = 100
 func _ready():
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func take_damage(damage_source):
+	current_amount = current_amount - damage_source.damage
+	if current_amount <= 0:
+		emit_signal("died")

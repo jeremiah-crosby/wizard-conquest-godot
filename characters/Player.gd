@@ -7,6 +7,13 @@ const SPELL_OFFSET_X = 30
 const SPELL_OFFSET_Y = -15
 
 var Fireball = preload("res://spells/Fireball.tscn")
+const DamageSource = preload("res://common/DamageSource.gd")
+
+func _ready():
+	$Health.connect("died", self, "on_died")
+	
+func on_died():
+	queue_free()
 
 func _physics_process(delta):
 	var velocity = Vector2()
@@ -34,4 +41,5 @@ func fire_spell_1():
 	get_parent().add_child(fireball)
 
 func _on_HitboxArea_area_entered(area):
-	queue_free()
+	if area is DamageSource:
+		$Health.take_damage(area)
