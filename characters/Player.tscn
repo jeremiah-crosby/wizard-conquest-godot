@@ -1,15 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://wizard_tmp.png" type="Texture" id=2]
-[ext_resource path="res://characters/Health.gd" type="Script" id=3]
+[ext_resource path="res://common/HitBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/Health.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 34.0684, 5.4155 )
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 24.2466
-height = 13.7378
+radius = 31.6879
+height = 3.38461
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -21,13 +22,12 @@ texture = ExtResource( 2 )
 position = Vector2( -0.115112, 26.7128 )
 shape = SubResource( 1 )
 
-[node name="HitboxArea" type="Area2D" parent="."]
+[node name="HitBox" parent="." instance=ExtResource( 3 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
-position = Vector2( -5.82361, -0.970581 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2( -2.58827, 1.29413 )
 shape = SubResource( 2 )
 
 [node name="Health" type="Node" parent="."]
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
-[connection signal="area_entered" from="HitboxArea" to="." method="_on_HitboxArea_area_entered"]

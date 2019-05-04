@@ -39,7 +39,3 @@ func fire_spell_1():
 	var fireball = Fireball.instance()
 	fireball.position = position + Vector2(SPELL_OFFSET_X, SPELL_OFFSET_Y)
 	get_parent().add_child(fireball)
-
-func _on_HitboxArea_area_entered(area):
-	if area is DamageSource:
-		$Health.take_damage(area)
