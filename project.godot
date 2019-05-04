@@ -87,6 +87,8 @@ play_spell_1={
 [layer_names]
 
 2d_physics/layer_1="main"
+2d_physics/layer_2="enemies"
+2d_physics/layer_3="projectiles"
 
 [rendering]
 

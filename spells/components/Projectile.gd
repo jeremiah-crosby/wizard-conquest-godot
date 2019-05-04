@@ -1,12 +1,9 @@
 tool
 extends KinematicBody2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export(Shape2D) var collision_shape setget collision_shape_set, collision_shape_get
 
 var velocity = Vector2()
-export(Shape2D) var collision_shape setget collision_shape_set, collision_shape_get
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,11 +18,11 @@ func _physics_process(delta):
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
-func collision_shape_set(shape):
-	get_node("Area2D/CollisionShape2D").shape = shape
-	
-func collision_shape_get():
-	return get_node("Area2D/CollisionShape2D").shape
-
-func _on_Area2D_area_entered(area):
+func _on_DamageSource_area_entered(area):
 	get_parent().queue_free()
+	
+func collision_shape_set(shape):
+	get_node("DamageSource/CollisionShape2D").shape = shape
+
+func collision_shape_get():
+	return get_node("DamageSource/CollisionShape2D").shape

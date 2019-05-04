@@ -23,6 +23,7 @@ position = Vector2( -0.115112, 26.7128 )
 shape = SubResource( 1 )
 
 [node name="HitBox" parent="." instance=ExtResource( 3 )]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2( -2.58827, 1.29413 )
