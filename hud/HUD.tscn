@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://ui/ui_theme.tres" type="Theme" id=1]
 [ext_resource path="res://hud/HUD.gd" type="Script" id=2]
+[ext_resource path="res://ui/icons/health.png" type="Texture" id=3]
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
@@ -11,18 +12,23 @@ script = ExtResource( 2 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
+margin_left = 20.0
+margin_top = 10.0
+margin_right = -20.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-margin_right = 1280.0
-margin_bottom = 27.0
+margin_right = 1240.0
+margin_bottom = 64.0
+custom_constants/separation = 20
 
-[node name="HealthLabel" type="Label" parent="MarginContainer/HBoxContainer"]
-margin_right = 75.0
-margin_bottom = 27.0
-text = "Health"
+[node name="HealthIcon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 64.0
+texture = ExtResource( 3 )
 
 [node name="HealthAmountLabel" type="Label" parent="MarginContainer/HBoxContainer"]
-margin_left = 79.0
-margin_right = 79.0
-margin_bottom = 27.0
+margin_left = 52.0
+margin_top = 18.0
+margin_right = 52.0
+margin_bottom = 45.0
 
