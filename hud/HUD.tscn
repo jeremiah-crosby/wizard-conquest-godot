@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ui/ui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://hud/HUD.gd" type="Script" id=2]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 1280.0
+margin_bottom = 27.0
+
+[node name="HealthLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+margin_right = 75.0
+margin_bottom = 27.0
+text = "Health"
+
+[node name="HealthAmountLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+margin_left = 79.0
+margin_right = 79.0
+margin_bottom = 27.0
+

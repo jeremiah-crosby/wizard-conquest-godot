@@ -3,6 +3,7 @@ extends "res://state_machine/state.gd"
 var initial_level_name = "res://levels/tomb/TombMap.tscn"
 var pause_screen
 var level_scene
+var hud
 
 func enter():
 	print("Entered GameplayState...")
@@ -12,6 +13,12 @@ func enter():
 	level_scene = ResourceLoader.load(self.initial_level_name).instance()
 	var root = get_tree().get_root()
 	root.call_deferred("add_child", level_scene)
+	
+	hud = ResourceLoader.load("res://hud/HUD.tscn").instance()
+	root.call_deferred("add_child", hud)
+	
+	var player = level_scene.get_node("Player")
+	player.get_node("Health").connect("health_changed", hud, "_on_player_health_changed")
 	
 func exit():
 	pause_screen.queue_free()
