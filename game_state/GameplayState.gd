@@ -18,7 +18,12 @@ func enter():
 	root.call_deferred("add_child", hud)
 	
 	var player = level_scene.get_node("Player")
-	player.get_node("Health").connect("health_changed", hud, "_on_player_health_changed")
+	var health_node = player.get_node("Health")
+	health_node.connect("health_changed", hud, "_on_player_health_changed")
+	health_node.connect("died", self, "_on_player_died")
+	
+func _on_player_died():
+	emit_signal("finished", "game_over")
 	
 func exit():
 	pause_screen.queue_free()

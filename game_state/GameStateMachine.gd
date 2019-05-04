@@ -8,7 +8,8 @@ extends "res://state_machine/state_machine.gd"
 func _ready():
 	states_map = {
 		"title": $TitleState,
-		"gameplay": $GameplayState
+		"gameplay": $GameplayState,
+		"game_over": $GameOverState
 	}
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

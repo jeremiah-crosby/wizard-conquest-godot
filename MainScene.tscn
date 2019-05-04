@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://MainScene.gd" type="Script" id=1]
 [ext_resource path="res://game_state/GameStateMachine.gd" type="Script" id=2]
 [ext_resource path="res://game_state/TitleState.gd" type="Script" id=3]
 [ext_resource path="res://game_state/GameplayState.gd" type="Script" id=4]
+[ext_resource path="res://game_state/GameOverState.gd" type="Script" id=5]
 
 [node name="MainScene" type="Node2D"]
 visible = false
@@ -18,4 +19,7 @@ script = ExtResource( 3 )
 
 [node name="GameplayState" type="Node" parent="GameStateMachine"]
 script = ExtResource( 4 )
+
+[node name="GameOverState" type="Node" parent="GameStateMachine"]
+script = ExtResource( 5 )
 
