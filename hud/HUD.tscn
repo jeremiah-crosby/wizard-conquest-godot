@@ -10,25 +10,28 @@ anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchor_right = 1.0
 margin_left = 20.0
 margin_top = 10.0
 margin_right = -20.0
+margin_bottom = 42.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
 margin_right = 1240.0
-margin_bottom = 64.0
+margin_bottom = 32.0
 custom_constants/separation = 20
 
-[node name="HealthIcon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="HealthIcon" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 margin_right = 32.0
-margin_bottom = 64.0
+margin_bottom = 32.0
 texture = ExtResource( 3 )
 
-[node name="HealthAmountLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="HealthAmountLabel" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 margin_left = 52.0
-margin_top = 18.0
+margin_top = 9.0
 margin_right = 52.0
-margin_bottom = 45.0
+margin_bottom = 23.0
 

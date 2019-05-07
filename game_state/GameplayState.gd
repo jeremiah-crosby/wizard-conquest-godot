@@ -28,6 +28,7 @@ func _on_player_died():
 func exit():
 	pause_screen.queue_free()
 	level_scene.queue_free()
+	hud.queue_free()
 	
 func handle_input(event):
 	if event.is_action_pressed("ui_cancel"):

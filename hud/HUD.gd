@@ -9,4 +9,4 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_player_health_changed(current_amount, max_amount):
-	get_node("MarginContainer/HBoxContainer/HealthAmountLabel").text = str(current_amount) + " / " + str(max_amount)
+	get_node("CanvasLayer/MarginContainer/HBoxContainer/HealthAmountLabel").text = str(current_amount) + " / " + str(max_amount)
