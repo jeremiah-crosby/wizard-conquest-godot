@@ -47,4 +47,4 @@ func fire_spell_1():
 func fire_spell_2():
 	var earthquake = Earthquake.instance()
 	earthquake.initialize(self)
-	get_parent().add_child(earthquake)
+	add_child(earthquake)
