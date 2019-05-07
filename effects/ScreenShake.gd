@@ -1,13 +1,22 @@
 extends Node
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export(int) var shake_magnitude = 0
+export(float) var shake_duration = 0.0
+
+var elapsed = 0
+var player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	set_process(true)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func initialize(player):
+	self.player = player
+	
+func _physics_process(delta):
+	if elapsed >= shake_duration:
+		set_process(false)
+		return
+		
+	elapsed += delta
+	player.get_node("Camera2D").offset = Vector2(rand_range(-shake_magnitude, shake_magnitude), rand_range(-shake_magnitude, shake_magnitude));

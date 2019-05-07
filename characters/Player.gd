@@ -6,7 +6,8 @@ const BASE_SPEED = 300
 const SPELL_OFFSET_X = 30
 const SPELL_OFFSET_Y = -15
 
-var Fireball = preload("res://spells/Fireball.tscn")
+const Fireball = preload("res://spells/Fireball.tscn")
+const Earthquake = preload("res://spells/Earthquake.tscn")
 const DamageSource = preload("res://common/DamageSource.gd")
 
 func _ready():
@@ -31,6 +32,9 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("play_spell_1"):
 		fire_spell_1()
+		
+	if Input.is_action_just_pressed("play_spell_2"):
+		fire_spell_2()
 	
 		
 	self.move_and_slide(velocity.normalized() * BASE_SPEED)
@@ -39,3 +43,8 @@ func fire_spell_1():
 	var fireball = Fireball.instance()
 	fireball.position = position + Vector2(SPELL_OFFSET_X, SPELL_OFFSET_Y)
 	get_parent().add_child(fireball)
+	
+func fire_spell_2():
+	var earthquake = Earthquake.instance()
+	earthquake.initialize(self)
+	get_parent().add_child(earthquake)
