@@ -6,8 +6,8 @@ const BASE_SPEED = 300
 const SPELL_OFFSET_X = 30
 const SPELL_OFFSET_Y = -15
 
-const Fireball = preload("res://spells/Fireball.tscn")
-const Earthquake = preload("res://spells/Earthquake.tscn")
+const Fireball = preload("res://spells/fireball/Fireball.tscn")
+const Earthquake = preload("res://spells/earthquake/Earthquake.tscn")
 const DamageSource = preload("res://common/DamageSource.gd")
 
 func _ready():

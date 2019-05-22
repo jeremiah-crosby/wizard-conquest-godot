@@ -9,3 +9,11 @@ func _ready():
 func initialize(player):
 	self.player = player
 	$ScreenShake.initialize(player)
+	$AnimatedSprite.play()
+	$AnimatedSprite.visible = true
+
+
+func _on_AnimatedSprite_animation_finished():
+	$AnimatedSprite.stop()
+	$AnimatedSprite.visible = false
+	queue_free()
